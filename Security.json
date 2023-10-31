@@ -1,0 +1,23 @@
+{
+    "staff": {
+        "00001":{
+            "id": "00001",
+            "name": "john",
+            "store": "Ahmedabad, Gujarat",
+            "password" : "john"
+        },
+        "45641":{
+            "id": "45641",
+            "name": "alexa",
+            "store": "Shahpur, Hydrabad",
+            "password" : "alexa"
+        },
+        "65421":{
+            "id": "65421",
+            "name": "sofiya",
+            "store": "Wardha, Maharastra",
+            "password" : "sofiya"
+        }
+    },
+    "manager": "manager"
+}
