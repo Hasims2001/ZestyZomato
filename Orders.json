@@ -1,1 +1,201 @@
-{"5691": {"billId": "5691", "status": "preparing", "name": "df", "email": "dfd", "items": [{"id": "987", "name": "Chocolate Cake", "price": 150, "availability": "Yes"}], "date": "31/10/23", "totalBill": 400, "store": "Ahmedabad, Gujarat"}, "3390": {"billId": "3390", "status": "delivered", "name": "hi", "email": "hello", "items": [{"id": "561", "name": "Paneer Bhurji", "price": 250, "availability": "Yes"}, {"id": "987", "name": "Chocolate Cake", "price": 150, "availability": "Yes"}], "date": "31/10/23", "totalBill": 400, "store": "Shahpur, Hydrabad"}, "9905": {"billId": "9905", "status": "preparing", "name": "hasim", "email": "hasim@gmail.com", "items": [{"id": "456", "name": "Margherita Pizza", "price": 200, "availability": "Yes"}, {"id": "561", "name": "Paneer Bhurji", "price": 250, "availability": "Yes"}], "date": "31/10/23", "totalBill": 450, "store": "Shahpur, Hydrabad"}, "9193": {"billId": "9193", "status": "received", "name": "foo", "email": "foo@gmail.com", "items": [{"id": "987", "name": "Chocolate Cake", "price": 150, "availability": "Yes"}, {"id": "456", "name": "Margherita Pizza", "price": 200, "availability": "Yes"}], "date": "31/10/23", "totalBill": 350, "store": "Shahpur, Hydrabad"}, "5636": {"billId": "5636", "status": "received", "name": "hasim", "email": "hasim@gmail.com", "items": [{"id": "456", "name": "Margherita Pizza", "price": 200, "availability": "Yes"}, {"id": "987", "name": "Chocolate Cake", "price": 150, "availability": "Yes"}], "date": "31/10/23", "totalBill": 350, "store": "Wardha, Maharastra"}, "5044": {"billId": "5044", "status": "received", "name": "hasim", "email": "hasim@gmail.com", "items": [{"id": "456", "name": "Margherita Pizza", "price": 200, "availability": "Yes"}, {"id": 529, "name": "Paneer Masala", "price": 350, "availability": "Yes"}], "date": "31/10/23", "totalBill": 550, "store": "Wardha, Maharastra"}}
+{
+    "5691": {
+        "billId": "5691",
+        "status": "preparing",
+        "name": "df",
+        "email": "dfd",
+        "items": [
+            {
+                "id": "987",
+                "name": "Chocolate Cake",
+                "price": 150,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 400,
+        "store": "Ahmedabad, Gujarat"
+    },
+    "3390": {
+        "billId": "3390",
+        "status": "delivered",
+        "name": "hi",
+        "email": "hello",
+        "items": [
+            {
+                "id": "561",
+                "name": "Paneer Bhurji",
+                "price": 250,
+                "availability": "Yes"
+            },
+            {
+                "id": "987",
+                "name": "Chocolate Cake",
+                "price": 150,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 400,
+        "store": "Shahpur, Hydrabad",
+        "feedback": "paneer was too good!"
+    },
+    "9905": {
+        "billId": "9905",
+        "status": "preparing",
+        "name": "hasim",
+        "email": "hasim@gmail.com",
+        "items": [
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            },
+            {
+                "id": "561",
+                "name": "Paneer Bhurji",
+                "price": 250,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 450,
+        "store": "Shahpur, Hydrabad"
+    },
+    "9193": {
+        "billId": "9193",
+        "status": "received",
+        "name": "foo",
+        "email": "foo@gmail.com",
+        "items": [
+            {
+                "id": "987",
+                "name": "Chocolate Cake",
+                "price": 150,
+                "availability": "Yes"
+            },
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 350,
+        "store": "Shahpur, Hydrabad"
+    },
+    "5636": {
+        "billId": "5636",
+        "status": "received",
+        "name": "hasim",
+        "email": "hasim@gmail.com",
+        "items": [
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            },
+            {
+                "id": "987",
+                "name": "Chocolate Cake",
+                "price": 150,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 350,
+        "store": "Wardha, Maharastra"
+    },
+    "5044": {
+        "billId": "5044",
+        "status": "received",
+        "name": "hasim",
+        "email": "hasim@gmail.com",
+        "items": [
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            },
+            {
+                "id": 529,
+                "name": "Paneer Masala",
+                "price": 350,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 550,
+        "store": "Wardha, Maharastra"
+    },
+    "1349": {
+        "billId": "1349",
+        "status": "received",
+        "name": "dfd",
+        "email": "dfd",
+        "items": [
+            {
+                "id": "123",
+                "name": "Chicken Curry",
+                "price": 350,
+                "availability": "Yes"
+            },
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 550,
+        "store": "Ahmedabad, Gujarat",
+        "promoDiscount": 0
+    },
+    "2639": {
+        "billId": "2639",
+        "status": "received",
+        "name": "dfd",
+        "email": "dfd",
+        "items": [
+            {
+                "id": "123",
+                "name": "Chicken Curry",
+                "price": 350,
+                "availability": "Yes"
+            },
+            {
+                "id": "456",
+                "name": "Margherita Pizza",
+                "price": 200,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 550,
+        "store": "Ahmedabad, Gujarat",
+        "promoDiscount": 0
+    },
+    "6090": {
+        "billId": "6090",
+        "status": "received",
+        "name": "dfd",
+        "email": "dfd",
+        "items": [
+            {
+                "id": "123",
+                "name": "Chicken Curry",
+                "price": 1600,
+                "availability": "Yes"
+            }
+        ],
+        "date": "31/10/23",
+        "totalBill": 1440.0,
+        "store": "Ahmedabad, Gujarat",
+        "promoDiscount": 160.0
+    }
+}

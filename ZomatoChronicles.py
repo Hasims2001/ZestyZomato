@@ -84,10 +84,31 @@ def getItems(msg, options):
         getItems(msg, options)
 
 
+def getPromoDiscount(totalBill):
+    promo = input('Promo code(optional):')
+    discount = 0
+    if(promo == "Flat10" and totalBill > 1500):
+        discount = totalBill*10/100
+    elif(promo == "Flat5" and totalBill > 1000):
+        discount = totalBill*5/100
+    elif(promo == ""):
+        pass
+    else:
+        print('promo code is not matched or your cart value is lower than required minimum order value')
+    
+    if(promo != ""):
+        opt = input('do you want to update promo code? (yes or no):')
+        if(opt == "yes"):
+            getPromoDiscount(totalBill)
+
+    return discount
+
 def generateBill(totalBill, billItem, username, useremail, location):
     billId = random.randint(1000, 9999)
     today = datetime.date.today()
     date = today.strftime("%d/%m/%y")
+    discount = getPromoDiscount(totalBill)
+    totalBill = totalBill - discount
     print("\n-------------Zesty Zomato Bill-------------")
     ind = 1
     print(f" Your name:{username}           Your Email:{useremail}     ")
@@ -96,10 +117,11 @@ def generateBill(totalBill, billItem, username, useremail, location):
     for i in billItem:
         print(f"\n     {ind}. {i['id']}-{i['name']}-{i['price']}      ")
         ind += 1
+    print(f"\n     Promo Discount: {discount}       ")
     print(f"\n     Total Bill: {totalBill}        ")
     print("--------------------------------------------")
     global orders
-    orders.update({billId : {"billId":str(billId),"status":"received",  "name": username, "email": useremail, "items": billItem, "date": date, "totalBill": totalBill, "store": location}})
+    orders.update({billId : {"billId":str(billId),"status":"received",  "name": username, "email": useremail, "items": billItem, "date": date, "totalBill": totalBill, "store": location, "promoDiscount": discount }})
     
     orderFile = open(orders_path, 'w')
     orderFile.write(json.dumps(orders))
@@ -153,13 +175,45 @@ def orderHistory():
             print(single)
     
     
+def DailyDiscount():
+    print("-:Daily Discount:-")
+    print("1. 5% Flat Discount on order above 1000 only for you. promo code: Flat5")
+    print("2. 10% Flat Discount on order above 1500 only for you. promo code: Flat10")
+    print("\n promo code can be apply only one at once.")
+
+
+def CustomerFeedback():
+    try:
+        BillId = input('Bill Id:')
+        email = input('Your Email:')
+        global orders
+        if(orders[BillId]['status'] == 'delivered'):
+            if(orders[BillId]['email'] == email):
+                feedback = input(f"write the feedback of {BillId} order:")
+                orders[BillId]["feedback"] = feedback
+                print(orders[BillId])
+                order_file = open(orders_path, 'w')
+                order_file.write(json.dumps(orders))
+                order_file.close()
+                print("Thank you for your feedback!")
+               
+            else:
+                print("Bill id or email is wrong.")
+                CustomerFeedback()
+        else:
+            print('order is not delivered yet. please try after sometime.')
+    except:
+        pass
+
 def CustomerRole():
     print("\n=====Zesty Zomato=====")
     print("\n1. View Menu")
     print("2. Place Order")
     print("3. Order Status")
     print("4. Order History")
-    print("5. Main Menu")
+    print("5. Daily Discount")
+    print("6. Customer Feedback")
+    print("7. Main Menu")
     print("\n====================")
     try:
         opt = int(input("choose one:"))
@@ -176,6 +230,12 @@ def CustomerRole():
             orderHistory()
             CustomerRole()
         elif(opt == 5):
+            DailyDiscount()
+            CustomerRole()
+        elif(opt == 6):
+            CustomerFeedback()
+            CustomerRole()
+        elif(opt == 7):
             pass
         else:
             print(f"please choose the correct option")
@@ -345,7 +405,14 @@ def ViewSales():
         print(f'{ind}. {item[0]} ({item[1]})')
         ind += 1
 
-                
+def ViewFeedback():
+    UpdateSales()
+    global sales
+    print('\n-:Feedbacks:-')
+    for itm in sales:
+        single = sales.get(itm)
+        if("feedback" in single):
+            print(f"Bill Id: {single['billId']}, Feedback: {single['feedback']}" )
 
 def ManagerRole():
     print('\n=========Zesty Zomato=========\n')
@@ -354,7 +421,8 @@ def ManagerRole():
     print("3. Delete Dish")
     print("4. View Dish")
     print("5. Sales Analytics")
-    print("6. Main Menu")
+    print("6. Customer Feedbacks")
+    print("7. Main Menu")
     print("\n==============================")
     try:
         opt = int(input('choose one:'))
@@ -374,6 +442,9 @@ def ManagerRole():
             ViewSales()
             ManagerRole()
         elif(opt == 6):
+            ViewFeedback()
+            ManagerRole()
+        elif(opt == 7):
             pass
         else:
             print("please choose the correct option")
